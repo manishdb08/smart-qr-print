@@ -1,0 +1,115 @@
+import { Kiosk, DocumentMeta } from '../types';
+
+export const SAMPLE_DOCUMENTS: DocumentMeta[] = [
+  {
+    id: 'doc-ai-systems',
+    name: 'Lecture_Notes_AI_Systems.pdf',
+    sizeFormatted: '2.4 MB',
+    totalPages: 8,
+    colorPages: [3, 6],
+    bwPages: [1, 2, 4, 5, 7, 8],
+    pages: [
+      { pageNumber: 1, title: 'Title & Introduction to Deep Learning', hasColor: false, type: 'text', snippet: 'Fundamentals of neural network architectures, forward pass and backpropagation calculus.' },
+      { pageNumber: 2, title: 'Gradient Descent Optimization', hasColor: false, type: 'text', snippet: 'Formulas for SGD, AdamW, and learning rate scheduling with decay vectors.' },
+      { pageNumber: 3, title: 'Transformer Multi-Head Attention Map', hasColor: true, type: 'chart', snippet: 'Color heatmaps comparing Q, K, V self-attention tensor weights across 12 layers.' },
+      { pageNumber: 4, title: 'Loss Convergence Proofs', hasColor: false, type: 'text', snippet: 'Convexity analysis, Lipschitz continuity conditions, and Hessian eigenvalues.' },
+      { pageNumber: 5, title: 'Benchmark Accuracy Comparison', hasColor: false, type: 'table', snippet: 'Table of SOTA validation scores on ImageNet and GSM8K across model sizes.' },
+      { pageNumber: 6, title: 'Hardware Accelerator Pipeline', hasColor: true, type: 'diagram', snippet: 'Full color architectural layout of TPU matrix multiplication units and systolic arrays.' },
+      { pageNumber: 7, title: 'Experimental Methodology', hasColor: false, type: 'text', snippet: 'Setup parameters, tokenization settings, batch sizing, and FP8 quantization configs.' },
+      { pageNumber: 8, title: 'Conclusion & Discussion Questions', hasColor: false, type: 'text', snippet: 'Summary of performance trade-offs, compute constraints, and seminar assignments.' },
+    ]
+  },
+  {
+    id: 'doc-healthtech',
+    name: 'HealthTech_Clinical_Report.pdf',
+    sizeFormatted: '1.8 MB',
+    totalPages: 4,
+    colorPages: [2, 3],
+    bwPages: [1, 4],
+    pages: [
+      { pageNumber: 1, title: 'Patient Demographics & Vitals', hasColor: false, type: 'text', snippet: 'Patient ID #VX-9921: BP 120/78, Heart Rate 72 bpm, SpO2 99%, Body Temp 98.6°F.' },
+      { pageNumber: 2, title: '12-Lead Electrocardiogram (ECG)', hasColor: true, type: 'chart', snippet: 'High-resolution multi-color rhythm strips indicating normal sinus rhythm with calibrated grid.' },
+      { pageNumber: 3, title: 'Complete Metabolic & Blood Panel', hasColor: true, type: 'diagram', snippet: 'Color-coded biochemical indicators: HbA1c 5.4%, Lipid profile, eGFR kidney marker.' },
+      { pageNumber: 4, title: 'Physician Signature & Prescriptions', hasColor: false, type: 'text', snippet: 'Rx instructions, authorized digital signature, dosage scheduling, and follow-up protocol.' },
+    ]
+  },
+  {
+    id: 'doc-smart-qr-pitch',
+    name: 'SMART_QR_PRINT_PitchDeck.pdf',
+    sizeFormatted: '3.6 MB',
+    totalPages: 6,
+    colorPages: [1, 2, 3, 4, 5, 6],
+    bwPages: [],
+    pages: [
+      { pageNumber: 1, title: 'Cover: VisionX Debug - SMART QR PRINT', hasColor: true, type: 'diagram', snippet: 'Team VisionX Debug: Gufran, Kunal, Nirmiti, Mahek. Intelligent self-service printing.' },
+      { pageNumber: 2, title: 'The Problem: Rethinking Traditional Printing', hasColor: true, type: 'chart', snippet: 'Comparison matrix: Traditional manual printing bottlenecks vs Smart QR Print flow.' },
+      { pageNumber: 3, title: 'The Intelligent Layer: Natural Language Settings', hasColor: true, type: 'diagram', snippet: 'Gemini AI intent translation pipeline: Natural Language -> Settings & Recommendations.' },
+      { pageNumber: 4, title: 'The Experience: 9-Step End-to-End Workflow', hasColor: true, type: 'diagram', snippet: 'Interactive sequence from QR scan, AI interpretation, cost calculation to physical print.' },
+      { pageNumber: 5, title: 'Implementation Options & 5-Layer Stack', hasColor: true, type: 'diagram', snippet: 'Interface, Intelligence, Document, Authority, and Execution layer architecture.' },
+      { pageNumber: 6, title: 'Outcome & Future Scope Roadmap', hasColor: true, type: 'chart', snippet: 'Kiosk expansion, multilingual voice support, healthtech integration, and autonomous kiosks.' },
+    ]
+  }
+];
+
+export const MOCK_KIOSKS: Kiosk[] = [
+  {
+    id: 'kiosk-01',
+    name: 'VisionX Kiosk #01 (Central Library)',
+    location: 'Campus Library, Ground Floor East Wing',
+    code: 'LIB-4091',
+    status: 'online',
+    paperCount: 420,
+    maxPaper: 500,
+    tonerBlack: 88,
+    tonerColor: 74,
+    supportedSizes: ['A4', 'Letter'],
+    supportsColor: true,
+    supportsDuplex: true,
+    ipAddress: '192.168.1.101',
+  },
+  {
+    id: 'kiosk-02',
+    name: 'VisionX Kiosk #02 (Tech Hub)',
+    location: 'Engineering Building B, 2nd Floor Commons',
+    code: 'ENG-2044',
+    status: 'online',
+    paperCount: 310,
+    maxPaper: 500,
+    tonerBlack: 62,
+    tonerColor: 91,
+    supportedSizes: ['A4', 'Letter', 'Legal'],
+    supportsColor: true,
+    supportsDuplex: true,
+    ipAddress: '192.168.1.102',
+  },
+  {
+    id: 'kiosk-03',
+    name: 'VisionX Health Kiosk #03 (Medical Wing)',
+    location: 'Health Sciences Clinic, Lobby A',
+    code: 'MED-7712',
+    status: 'online',
+    paperCount: 180,
+    maxPaper: 500,
+    tonerBlack: 94,
+    tonerColor: 82,
+    supportedSizes: ['A4', 'Letter'],
+    supportsColor: true,
+    supportsDuplex: true,
+    ipAddress: '192.168.1.103',
+  },
+  {
+    id: 'kiosk-04',
+    name: 'VisionX Kiosk #04 (Dormitory Hub)',
+    location: 'Student Residence Hall 3, Foyer',
+    code: 'DRM-5018',
+    status: 'paper_low',
+    paperCount: 35,
+    maxPaper: 500,
+    tonerBlack: 45,
+    tonerColor: 30,
+    supportedSizes: ['A4'],
+    supportsColor: true,
+    supportsDuplex: true,
+    ipAddress: '192.168.1.104',
+  }
+];

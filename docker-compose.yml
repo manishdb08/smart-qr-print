@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smart-qr-print-backend
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - HOST=0.0.0.0
+      - NODE_ENV=production
+      - CORS_ORIGIN=*
+      - DB_PATH=/app/storage/data/app.db
+      - UPLOAD_DIR=/app/storage/uploads
+      - ADMIN_API_KEY=visionx-admin-secure-key-2026
+      - PRICE_BW=2.0
+      - PRICE_COLOR=8.0
+      - DUPLEX_DISCOUNT=0.15
+      - BULK_THRESHOLD=10
+      - BULK_DISCOUNT=0.10
+      - CURRENCY=₹
+    volumes:
+      - backend-data:/app/storage/data
+      - backend-uploads:/app/storage/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:4000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  backend-data:
+  backend-uploads:

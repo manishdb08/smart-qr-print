@@ -1,0 +1,35 @@
+{
+  "name": "smart-qr-print-backend",
+  "version": "1.0.0",
+  "description": "Smart QR Print - Intelligent Self-Service Printing Backend API by Team VisionX Debug",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "smart-qr-print",
+    "kiosk",
+    "iot",
+    "healthtech",
+    "printing",
+    "gemini-ai",
+    "visionx-debug"
+  ],
+  "author": "Team VisionX Debug (Gufran, Kunal, Nirmiti, Mahek)",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-lib": "^1.17.9",
+    "qrcode": "^1.5.4",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
+  }
+}
